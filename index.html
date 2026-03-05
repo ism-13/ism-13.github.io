@@ -3,157 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismaël Saho | Portfolio Professionnel</title>
+    <title>Ismaël Saho | Portfolio Cybersécurité</title>
     <style>
         :root { 
-            --dark-slate: #0f172a; 
-            --border-gray: #e2e8f0;
-            --accent-blue: #2563eb; 
-            --text-main: #1e293b;
-            --bg-body: #ffffff;
+            --deep-blue: #0f172a; 
+            --soft-blue: #1e293b;
+            --electric-blue: #3b82f6; 
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
         }
 
         body { 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            font-family: 'Inter', Helvetica, sans-serif; 
             margin: 0; 
-            background: var(--bg-body); 
-            color: var(--text-main); 
-            line-height: 1.5;
+            background: var(--white); 
+            color: var(--soft-blue); 
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Barre de navigation sobre */
+        /* Navigation fixe et stylée */
         nav { 
-            background: #ffffff; 
-            padding: 25px 0; 
+            background: var(--deep-blue); 
+            padding: 20px 0; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
             text-align: center;
-            border-bottom: 1px solid var(--border-gray);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         nav a { 
-            color: var(--text-main); 
+            color: var(--white); 
             text-decoration: none; 
-            margin: 0 20px; 
-            font-weight: 500; 
-            font-size: 0.8em; 
+            margin: 0 15px; 
+            font-weight: 600; 
+            font-size: 0.85em; 
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: color 0.2s;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            transition: 0.3s;
         }
-        nav a:hover { color: var(--accent-blue); }
+        nav a:hover { opacity: 1; color: var(--electric-blue); }
 
-        /* En-tête minimaliste */
+        /* Header avec impact */
         header { 
-            padding: 100px 20px; 
+            padding: 120px 20px; 
             text-align: center;
-            border-bottom: 1px solid var(--border-gray);
-            background: #f8fafc;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1e293b 100%);
+            color: var(--white);
         }
         header h1 { 
             margin: 0; 
-            font-size: 2.5em; 
-            letter-spacing: 5px; 
-            font-weight: 300;
+            font-size: 3em; 
+            letter-spacing: 2px; 
             text-transform: uppercase;
         }
         header p { 
-            color: var(--accent-blue); 
-            font-weight: 500; 
-            font-size: 1em; 
+            color: var(--electric-blue); 
+            font-size: 1.1em; 
             margin-top: 15px; 
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 3px;
         }
 
-        /* Conteneur principal */
-        .container { 
-            max-width: 750px; 
-            margin: 0 auto; 
-            padding: 80px 20px; 
-            text-align: center; 
-        }
-        
+        /* Alternance de couleurs pour les sections */
         section { 
-            margin-bottom: 100px; 
+            padding: 100px 20px; 
+        }
+        section:nth-child(even) { background: var(--light-gray); }
+        section:nth-child(odd) { background: var(--white); }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
         }
 
         h2 { 
-            color: var(--dark-slate); 
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 40px;
+            color: var(--deep-blue); 
+            font-size: 1.5em;
+            margin-bottom: 50px;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        p {
-            font-size: 1.05em;
-            color: #475569;
-            margin-bottom: 20px;
-        }
-
-        /* Liste de compétences technique */
-        .tech-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-        .tech-item {
-            border: 1px solid var(--border-gray);
-            padding: 6px 15px;
-            font-size: 0.85em;
-            color: #64748b;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* Bouton institutionnel */
-        .btn { 
-            display: inline-block; 
-            padding: 14px 35px; 
-            border: 1px solid var(--dark-slate);
-            color: var(--dark-slate) !important; 
-            text-decoration: none; 
-            font-size: 0.9em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 30px;
-            transition: all 0.3s;
-        }
-        .btn:hover { 
-            background: var(--dark-slate); 
-            color: white !important; 
-        }
-
-        .experience-block {
-            margin-bottom: 40px;
             text-align: center;
         }
-        .experience-block h3 {
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-        .experience-block span {
-            font-size: 0.9em;
-            color: var(--accent-blue);
+        h2::after {
+            content: '';
             display: block;
-            margin-bottom: 15px;
+            width: 60px;
+            height: 4px;
+            background: var(--electric-blue);
+            margin: 15px auto 0;
+        }
+
+        /* Blocs de contenu stylés */
+        .content-box {
+            background: var(--white);
+            padding: 40px;
+            border-left: 5px solid var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .tag {
+            background: var(--deep-blue);
+            color: white;
+            padding: 8px 18px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Bouton Pro */
+        .btn { 
+            display: inline-block; 
+            padding: 16px 40px; 
+            background: var(--electric-blue);
+            color: white !important; 
+            text-decoration: none; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+            border-radius: 4px;
+        }
+        .btn:hover { 
+            background: var(--deep-blue);
+            transform: translateY(-3px);
+        }
+
+        .info-contact {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: var(--soft-blue);
         }
 
         footer { 
             text-align: center; 
-            padding: 60px 20px; 
-            border-top: 1px solid var(--border-gray);
-            font-size: 0.75em; 
-            color: #94a3b8;
-            letter-spacing: 1px;
+            padding: 50px; 
+            background: var(--deep-blue); 
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8em; 
             text-transform: uppercase;
         }
     </style>
@@ -161,9 +158,9 @@
 <body>
 
 <nav>
-    <a href="#propos">À Propos</a>
-    <a href="#experiences">Expériences</a>
-    <a href="#projets">Projets</a>
+    <a href="#propos">Profil</a>
+    <a href="#experiences">Parcours</a>
+    <a href="#projets">Compétences</a>
     <a href="#cv">Curriculum</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -173,58 +170,68 @@
     <p>Étudiant en Cybersécurité</p>
 </header>
 
-<div class="container">
-    
-    <section id="propos">
+<section id="propos">
+    <div class="container">
         <h2>Profil Professionnel</h2>
-        <p>Actuellement en formation pour l'obtention d'un Certificat de spécialisation en Cybersécurité (2025-2026), je me concentre sur l'administration sécurisée des réseaux et l'analyse de vulnérabilités.</p>
-        <p>Mon parcours académique et mes premières expériences professionnelles m'ont permis de développer une approche rigoureuse de la sécurité informatique.</p>
-    </section>
-
-    <section id="experiences">
-        <h2>Expériences Académiques et Stages</h2>
-        <div class="experience-block">
-            <h3>Institut Fresnel</h3>
-            <span>Marseille — 2026 (6 semaines)</span>
-            <p>Mission d'audit de vulnérabilité via l'outil OpenVAS. Analyse des rapports de scans et préconisations techniques pour la sécurisation du parc informatique.</p>
+        <div class="content-box">
+            <p>Étudiant au sein de l'École Libre des Métiers, je prépare actuellement un <strong>Certificat de spécialisation en Cybersécurité</strong> (promotion 2025-2026).</p>
+            <p>Mon objectif est de contribuer à la sécurisation des infrastructures numériques à travers une approche méthodique de l'administration réseaux et de l'audit de systèmes.</p>
         </div>
-        <div class="experience-block">
-            <h3>SNCF (Junior & Cie)</h3>
-            <span>Marseille — 2026</span>
-            <p>Gestion de la sécurité des flux et encadrement de groupes. Application stricte des protocoles de sécurité ferroviaire.</p>
+    </div>
+</section>
+
+<section id="experiences">
+    <div class="container">
+        <h2>Parcours & Stages</h2>
+        <div class="content-box">
+            <h3 style="margin-top:0;">Institut Fresnel</h3>
+            <p style="color:var(--electric-blue); font-weight:bold;">Stagiaire Administrateur Réseaux — 2026</p>
+            <p>Déploiement et exploitation de la solution d'audit <strong>OpenVAS (Greenbone)</strong>. Analyse des vulnérabilités critiques et rédaction de rapports de remédiation technique.</p>
         </div>
-    </section>
-
-    <section id="projets">
-        <h2>Compétences et Projets</h2>
-        <p>Développement de scripts d'analyse en Python et C. Projets de gestion de capteurs via architecture Arduino et protocoles I2C.</p>
-        <div class="tech-list">
-            <div class="tech-item">OpenVAS</div>
-            <div class="tech-item">Networking</div>
-            <div class="tech-item">Linux</div>
-            <div class="tech-item">Python</div>
-            <div class="tech-item">Arduino</div>
+        <div class="content-box">
+            <h3 style="margin-top:0;">SNCF (Junior & Cie)</h3>
+            <p style="color:var(--electric-blue); font-weight:bold;">Accompagnateur Junior — 2026</p>
+            <p>Responsable de la sécurité et de l'encadrement des flux passagers. Respect rigoureux des protocoles de sécurité en environnement ferroviaire.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="cv">
-        <h2>Document de synthèse</h2>
-        <p>Accès au Curriculum Vitae complet au format numérique.</p>
-        <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">Consulter le CV (PDF)</a>
-    </section>
+<section id="projets">
+    <div class="container" style="text-align:center;">
+        <h2>Domaines de Compétences</h2>
+        <p>Maîtrise des environnements techniques liés à la défense des réseaux et au développement sécurisé.</p>
+        <div class="tech-tags">
+            <div class="tag">Audits Cyber (OpenVAS)</div>
+            <div class="tag">Administration Linux</div>
+            <div class="tag">Réseaux IP/Ethernet</div>
+            <div class="tag">Python & C</div>
+            <div class="tag">Électronique (Arduino/I2C)</div>
+        </div>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2>Informations de contact</h2>
-        <p>Localisation : Marseille, France</p>
-        <p>Mail : ismasaho2007@gmail.com</p>
-        <p>Téléphone : 07 66 86 20 44</p>
-        <a href="https://github.com/ism-13" class="btn">Accéder au dépôt GitHub</a>
-    </section>
+<section id="cv">
+    <div class="container" style="text-align:center;">
+        <h2>Curriculum Vitae</h2>
+        <p>Téléchargez mon dossier de compétences complet au format PDF pour plus de détails sur mon parcours académique.</p>
+        <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">Télécharger le CV (PDF)</a>
+    </div>
+</section>
 
-</div>
+<section id="contact">
+    <div class="container" style="text-align:center;">
+        <h2>Contact</h2>
+        <div class="info-contact">Marseille, France</div>
+        <div class="info-contact">ismasaho2007@gmail.com</div>
+        <div class="info-contact">07 66 86 20 44</div>
+        <div style="margin-top:40px;">
+            <a href="https://github.com/ism-13" class="btn" style="background:var(--deep-blue);">Consulter mon GitHub</a>
+        </div>
+    </div>
+</section>
 
 <footer>
-    Dossier de compétences numérique — Ismaël Saho — 2026
+    © 2026 Ismaël Saho — Dossier de compétences numérique — Cybersécurité
 </footer>
 
 </body>
