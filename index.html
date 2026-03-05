@@ -22,7 +22,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigation fixe et stylée */
+        /* Navigation fixe */
         nav { 
             background: var(--deep-blue); 
             padding: 20px 0; 
@@ -45,7 +45,7 @@
         }
         nav a:hover { opacity: 1; color: var(--electric-blue); }
 
-        /* Header avec impact */
+        /* Header Cyber */
         header { 
             padding: 120px 20px; 
             text-align: center;
@@ -66,9 +66,9 @@
             text-transform: uppercase;
         }
 
-        /* Alternance de couleurs pour les sections */
+        /* Sections */
         section { 
-            padding: 100px 20px; 
+            padding: 80px 20px; 
         }
         section:nth-child(even) { background: var(--light-gray); }
         section:nth-child(odd) { background: var(--white); }
@@ -95,13 +95,12 @@
             margin: 15px auto 0;
         }
 
-        /* Blocs de contenu stylés */
         .content-box {
             background: var(--white);
-            padding: 40px;
+            padding: 35px;
             border-left: 5px solid var(--electric-blue);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .tech-tags {
@@ -120,7 +119,6 @@
             text-transform: uppercase;
         }
 
-        /* Bouton Pro */
         .btn { 
             display: inline-block; 
             padding: 16px 40px; 
@@ -137,12 +135,6 @@
         .btn:hover { 
             background: var(--deep-blue);
             transform: translateY(-3px);
-        }
-
-        .info-contact {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: var(--soft-blue);
         }
 
         footer { 
@@ -175,7 +167,7 @@
         <h2>Profil Professionnel</h2>
         <div class="content-box">
             <p>Étudiant au sein de l'École Libre des Métiers, je prépare actuellement un <strong>Certificat de spécialisation en Cybersécurité</strong> (promotion 2025-2026).</p>
-            <p>Mon objectif est de contribuer à la sécurisation des infrastructures numériques à travers une approche méthodique de l'administration réseaux et de l'audit de systèmes.</p>
+            <p>Mon parcours est orienté vers l'administration sécurisée des infrastructures et l'analyse de vulnérabilités réseaux.</p>
         </div>
     </div>
 </section>
@@ -183,15 +175,23 @@
 <section id="experiences">
     <div class="container">
         <h2>Parcours & Stages</h2>
+        
         <div class="content-box">
-            <h3 style="margin-top:0;">Institut Fresnel</h3>
-            <p style="color:var(--electric-blue); font-weight:bold;">Stagiaire Administrateur Réseaux — 2026</p>
-            <p>Déploiement et exploitation de la solution d'audit <strong>OpenVAS (Greenbone)</strong>. Analyse des vulnérabilités critiques et rédaction de rapports de remédiation technique.</p>
+            <h3 style="margin:0;">Institut Fresnel</h3>
+            <p style="color:var(--electric-blue); font-weight:bold; margin:5px 0;">Stagiaire Administrateur Réseaux — 2026</p>
+            <p>Audit de vulnérabilité (OpenVAS/Greenbone). Analyse et remédiation technique du parc informatique.</p>
         </div>
+
         <div class="content-box">
-            <h3 style="margin-top:0;">SNCF (Junior & Cie)</h3>
-            <p style="color:var(--electric-blue); font-weight:bold;">Accompagnateur Junior — 2026</p>
-            <p>Responsable de la sécurité et de l'encadrement des flux passagers. Respect rigoureux des protocoles de sécurité en environnement ferroviaire.</p>
+            <h3 style="margin:0;">SNCF (Junior & Cie)</h3>
+            <p style="color:var(--electric-blue); font-weight:bold; margin:5px 0;">Accompagnateur Junior — 2026</p>
+            <p>Gestion de la sécurité des flux passagers et respect des protocoles ferroviaires.</p>
+        </div>
+
+        <div class="content-box">
+            <h3 style="margin:0;">Lycée du Rempart</h3>
+            <p style="color:var(--electric-blue); font-weight:bold; margin:5px 0;">Baccalauréat STI2D SIN — 2025</p>
+            <p>Option Système d'Information et Numérique. Bases de l'informatique, des réseaux et de l'électronique programmée.</p>
         </div>
     </div>
 </section>
@@ -199,10 +199,9 @@
 <section id="projets">
     <div class="container" style="text-align:center;">
         <h2>Domaines de Compétences</h2>
-        <p>Maîtrise des environnements techniques liés à la défense des réseaux et au développement sécurisé.</p>
         <div class="tech-tags">
             <div class="tag">Audits Cyber (OpenVAS)</div>
-            <div class="tag">Administration Linux</div>
+            <div class="tag">Administration Linux/Windows</div>
             <div class="tag">Réseaux IP/Ethernet</div>
             <div class="tag">Python & C</div>
             <div class="tag">Électronique (Arduino/I2C)</div>
@@ -213,25 +212,27 @@
 <section id="cv">
     <div class="container" style="text-align:center;">
         <h2>Curriculum Vitae</h2>
-        <p>Téléchargez mon dossier de compétences complet au format PDF pour plus de détails sur mon parcours académique.</p>
-        <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">Télécharger le CV (PDF)</a>
+        <p>Téléchargez mon dossier de compétences complet au format numérique (PDF).</p>
+        <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">Consulter le CV (PDF)</a>
     </div>
 </section>
 
 <section id="contact">
     <div class="container" style="text-align:center;">
         <h2>Contact</h2>
-        <div class="info-contact">Marseille, France</div>
-        <div class="info-contact">ismasaho2007@gmail.com</div>
-        <div class="info-contact">07 66 86 20 44</div>
+        <p style="font-size:1.1em; color:var(--soft-blue);">
+            Marseille, France<br>
+            ismasaho2007@gmail.com<br>
+            07 66 86 20 44
+        </p>
         <div style="margin-top:40px;">
-            <a href="https://github.com/ism-13" class="btn" style="background:var(--deep-blue);">Consulter mon GitHub</a>
+            <a href="https://github.com/ism-13" class="btn" style="background:var(--deep-blue);">Accéder au GitHub</a>
         </div>
     </div>
 </section>
 
 <footer>
-    © 2026 Ismaël Saho — Dossier de compétences numérique — Cybersécurité
+    © 2026 Ismaël Saho — Portfolio Numérique — Cybersécurité
 </footer>
 
 </body>
