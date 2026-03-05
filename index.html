@@ -3,73 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismaël Saho | Portfolio Cybersécurité</title>
+    <title>Portfolio | Ismaël Saho</title>
     <style>
-        :root { --main-blue: #1a365d; --light-blue: #2a4a7d; --bg-gray: #f4f7f9; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-gray); color: #333; margin: 0; line-height: 1.6; }
-        header { background-color: var(--main-blue); color: white; padding: 80px 20px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); }
-        header h1 { margin: 0; font-size: 3em; letter-spacing: 2px; }
-        header p { font-size: 1.2em; opacity: 0.9; }
-        .container { max-width: 900px; margin: -50px auto 50px; padding: 20px; }
-        .card { background: white; padding: 30px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid var(--main-blue); }
-        h2 { color: var(--main-blue); margin-top: 0; display: flex; align-items: center; }
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-badge { background: var(--light-blue); color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
-        .project-highlight { background: #eef2f7; border-radius: 8px; padding: 15px; margin-top: 10px; }
-        footer { text-align: center; padding: 40px; color: #777; font-size: 0.9em; }
-        .contact-link { color: var(--main-blue); text-decoration: none; font-weight: bold; }
+        :root { --main-blue: #1a365d; --accent-blue: #3182ce; --bg-gray: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg-gray); scroll-behavior: smooth; color: #2d3748; }
+        
+        nav { background: var(--main-blue); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.85em; transition: 0.3s; letter-spacing: 1px; }
+        nav a:hover { color: #63b3ed; }
+
+        header { background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; color: white; padding: 120px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 3.5em; letter-spacing: 3px; }
+        
+        .section { max-width: 1000px; margin: 40px auto; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        h2 { color: var(--main-blue); border-bottom: 3px solid var(--accent-blue); display: inline-block; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start; }
+        .badge { background: #e2e8f0; padding: 6px 14px; border-radius: 20px; display: inline-block; margin: 5px; font-size: 0.85em; font-weight: 600; color: var(--main-blue); }
+        
+        .btn { display: inline-block; padding: 12px 25px; background: var(--accent-blue); color: white !important; text-decoration: none; border-radius: 5px; margin: 10px 5px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #2b6cb0; transform: translateY(-2px); }
+        
+        .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid #e2e8f0; }
+        .exp-date { color: var(--accent-blue); font-weight: bold; font-size: 0.9em; }
+
+        footer { text-align: center; padding: 50px; background: #1a202c; color: white; }
     </style>
 </head>
 <body>
 
-<header>
+<nav>
+    <a href="#accueil">ACCUEIL</a>
+    <a href="#propos">À PROPOS</a>
+    <a href="#stages">MES STAGES</a>
+    <a href="#projets">PROJETS</a>
+    <a href="#cv">CV & EXPÉRIENCES</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<header id="accueil">
     <h1>ISMAËL SAHO</h1>
-    <p>Étudiant en Cybersécurité | Spécialisation Réseaux & Systèmes</p>
+    <p>Étudiant en Cybersécurité | Expert en devenir</p>
 </header>
 
-<div class="container">
-    <div class="card">
-        <h2>À propos de moi</h2>
-        <p>Actuellement en <strong>Certificat de spécialisation en Cybersécurité</strong> à l'École Libre des Métiers, je me passionne pour la protection des données et l'audit d'infrastructures. Mon parcours en STI2D SIN m'a donné des bases solides en informatique et électronique.</p>
-    </div>
+<div class="section" id="propos">
+    <h2>À Propos de Moi</h2>
+    <p>Actuellement en <strong>Certificat de spécialisation en Cybersécurité</strong> à l'École Libre des Métiers (2025-2026). Originaire de Marseille, j'ai forgé mes bases techniques lors de mon Bac STI2D option SIN au Lycée du Rempart.</p>
+    <p>Passionné par la <strong>moto</strong>, les <strong>nouvelles technologies</strong> et l'<strong>histoire</strong>, je cultive la rigueur et l'analyse dans tout ce que j'entreprends.</p>
+</div>
 
-    <div class="card">
-        <h2>Expérience Marquante</h2>
-        <h3>Stagiaire Administrateur Réseaux — Institut Fresnel</h3>
-        <p><em>Marseille | 2026 (6 semaines)</em></p>
-        <div class="project-highlight">
-            <strong>Projet Majeur : Audit de vulnérabilités</strong>
-            <p>Mise en place et utilisation de <strong>Greenbone Assistant (OpenVAS)</strong> pour identifier et corriger les failles de sécurité du parc informatique.</p>
+<div class="section" id="stages">
+    <h2>Mes Stages</h2>
+    <div class="grid">
+        <div>
+            <img src="https://www.fresnel.fr/spip/IMG/siteon0.png" alt="Institut Fresnel" style="width: 100%; border-radius: 8px; border: 1px solid #eee;">
         </div>
-    </div>
-
-    <div class="card">
-        <h2>Compétences Techniques</h2>
-        <div class="skills-container">
-            <span class="skill-badge">Audit Cyber (OpenVAS)</span>
-            <span class="skill-badge">Réseaux IP & Ethernet</span>
-            <span class="skill-badge">Python / C / HTML-CSS</span>
-            <span class="skill-badge">Linux & Windows</span>
-            <span class="skill-badge">Électronique (Arduino/I2C)</span>
+        <div>
+            <h3>Stagiaire Administrateur Réseaux — Institut Fresnel</h3>
+            <p class="exp-date">Marseille | 2026 (6 semaines)</p>
+            <p><strong>Mission principale :</strong> Audit de vulnérabilités avec <strong>Greenbone Assistant (OpenVAS)</strong>.</p>
+            <ul>
+                <li>Diagnostic technique des infrastructures réseaux et systèmes.</li>
+                <li>Sécurisation des environnements informatiques.</li>
+            </ul>
+            <h4>Compétences validées :</h4>
+            <span class="badge">OpenVAS</span> <span class="badge">Audit Cyber</span> <span class="badge">Diagnostic Réseau</span>
         </div>
-    </div>
-
-    <div class="card">
-        <h2>Centres d'Intérêt</h2>
-        <p>🏍️ <strong>Passion Moto :</strong> Discipline et gestion des risques.</p>
-        <p>💻 <strong>Projets Informatiques :</strong> Développement de scripts et veille technologique.</p>
-        <p>📜 <strong>Histoire :</strong> Curiosité intellectuelle et analyse du passé.</p>
-    </div>
-
-    <div class="card" style="text-align: center;">
-        <h2>Me contacter</h2>
-        <p>Disponible pour des projets ou opportunités en alternance.</p>
-        <p>📧 <a href="mailto:ismasaho2007@gmail.com" class="contact-link">ismasaho2007@gmail.com</a></p>
     </div>
 </div>
 
+<div class="section" id="projets">
+    <h2>Projets & Activités</h2>
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px;">
+            <h3>Cyber & Réseaux</h3>
+            <p>Configuration de protocoles IP et Ethernet. Développement de scripts en Python et C pour l'automatisation de tâches.</p>
+        </div>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px;">
+            <h3>Électronique DIY</h3>
+            <p>Utilisation de cartes <strong>Arduino</strong> et protocoles <strong>I2C</strong> pour la gestion de capteurs intelligents.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="cv">
+    <h2>CV & Expériences</h2>
+    
+    <div class="exp-item">
+        <span class="exp-date">2026</span>
+        <h3>Animateur Junior & Cie — SNCF</h3>
+        <p>Accompagnement sécurisé de groupes d'enfants en milieu ferroviaire. Gestion rigoureuse des flux et respect strict des procédures de sécurité.</p>
+    </div>
+
+    <div class="exp-item">
+        <span class="exp-date">2024 - 2026</span>
+        <h3>Animateur en centre aéré</h3>
+        <p>Encadrement d'enfants et organisation d'activités collectives. Développement du sens des responsabilités et du travail en équipe.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">📥 TÉLÉCHARGER MON CV COMPLET (PDF)</a>
+    </div>
+</div>
+
+<div class="section" id="contact" style="text-align: center;">
+    <h2>Contact & Réseaux</h2>
+    <p>📍 9 rue commandants mages, 13001 Marseille </p>
+    <p>📞 07 66 86 20 44 </p>
+    <p>📧 <a href="mailto:ismasaho2007@gmail.com" style="color: var(--accent-blue); font-weight: bold;">ismasaho2007@gmail.com</a> </p>
+    <br>
+    <a href="https://github.com/ism-13" class="btn">GitHub</a>
+    <a href="#" class="btn" style="background: #0077b5;">LinkedIn</a>
+</div>
+
 <footer>
-    <p>&copy; 2026 Ismaël Saho - Portfolio réalisé avec GitHub Pages</p>
+    <p>&copy; 2026 Ismaël Saho - Portfolio réalisé pour validation de stage</p>
 </footer>
 
 </body>
