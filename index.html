@@ -8,116 +8,74 @@
         :root { --main-blue: #1a365d; --accent-blue: #3182ce; --bg-gray: #f8fafc; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg-gray); scroll-behavior: smooth; color: #2d3748; }
         
-        nav { background: var(--main-blue); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.85em; transition: 0.3s; letter-spacing: 1px; }
-        nav a:hover { color: #63b3ed; }
+        nav { background: var(--main-blue); padding: 15px; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.85em; }
 
-        header { background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; color: white; padding: 120px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 3.5em; letter-spacing: 3px; }
+        header { background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; color: white; padding: 100px 20px; text-align: center; }
         
-        .section { max-width: 1000px; margin: 40px auto; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        h2 { color: var(--main-blue); border-bottom: 3px solid var(--accent-blue); display: inline-block; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        /* On donne une hauteur minimale à chaque section pour qu'elles ne se ressemblent pas */
+        .section { max-width: 900px; margin: 20px auto; padding: 60px 40px; background: white; border-radius: 12px; min-height: 300px; }
         
-        .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: start; }
-        .badge { background: #e2e8f0; padding: 6px 14px; border-radius: 20px; display: inline-block; margin: 5px; font-size: 0.85em; font-weight: 600; color: var(--main-blue); }
+        h2 { color: var(--main-blue); border-bottom: 3px solid var(--accent-blue); padding-bottom: 10px; }
+        .btn { display: inline-block; padding: 12px 25px; background: var(--accent-blue); color: white !important; text-decoration: none; border-radius: 5px; margin-top: 20px; font-weight: bold; }
         
-        .btn { display: inline-block; padding: 12px 25px; background: var(--accent-blue); color: white !important; text-decoration: none; border-radius: 5px; margin: 10px 5px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #2b6cb0; transform: translateY(-2px); }
-        
-        .exp-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid #e2e8f0; }
-        .exp-date { color: var(--accent-blue); font-weight: bold; font-size: 0.9em; }
-
-        footer { text-align: center; padding: 50px; background: #1a202c; color: white; }
+        .badge { background: #e2e8f0; padding: 5px 12px; border-radius: 15px; display: inline-block; margin: 5px; font-size: 0.85em; }
+        footer { text-align: center; padding: 30px; background: #1a202c; color: white; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#accueil">ACCUEIL</a>
     <a href="#propos">À PROPOS</a>
-    <a href="#stages">MES STAGES</a>
+    <a href="#stages">MON STAGE</a>
     <a href="#projets">PROJETS</a>
-    <a href="#cv">CV & EXPÉRIENCES</a>
+    <a href="#cv">CV</a>
     <a href="#contact">CONTACT</a>
 </nav>
 
 <header id="accueil">
     <h1>ISMAËL SAHO</h1>
-    <p>Étudiant en Cybersécurité | Expert en devenir</p>
+    <p>Étudiant en Cybersécurité</p>
 </header>
 
 <div class="section" id="propos">
     <h2>À Propos de Moi</h2>
-    <p>Actuellement en <strong>Certificat de spécialisation en Cybersécurité</strong> à l'École Libre des Métiers (2025-2026). Originaire de Marseille, j'ai forgé mes bases techniques lors de mon Bac STI2D option SIN au Lycée du Rempart.</p>
-    <p>Passionné par la <strong>moto</strong>, les <strong>nouvelles technologies</strong> et l'<strong>histoire</strong>, je cultive la rigueur et l'analyse dans tout ce que j'entreprends.</p>
+    <p>Actuellement étudiant en <strong>Certificat de spécialisation en Cybersécurité</strong>. Mon parcours m'a permis d'acquérir des bases solides en réseaux et en sécurisation des systèmes informatiques.</p>
+    <p>Passionné par la moto et les nouvelles technologies, je cherche à mettre mes compétences au service de la protection des données.</p>
 </div>
 
-<div class="section" id="stages">
-    <h2>Mes Stages</h2>
-    <div class="grid">
-        <div>
-            <img src="https://www.fresnel.fr/spip/IMG/siteon0.png" alt="Institut Fresnel" style="width: 100%; border-radius: 8px; border: 1px solid #eee;">
-        </div>
-        <div>
-            <h3>Stagiaire Administrateur Réseaux — Institut Fresnel</h3>
-            <p class="exp-date">Marseille | 2026 (6 semaines)</p>
-            <p><strong>Mission principale :</strong> Audit de vulnérabilités avec <strong>Greenbone Assistant (OpenVAS)</strong>.</p>
-            <ul>
-                <li>Diagnostic technique des infrastructures réseaux et systèmes.</li>
-                <li>Sécurisation des environnements informatiques.</li>
-            </ul>
-            <h4>Compétences validées :</h4>
-            <span class="badge">OpenVAS</span> <span class="badge">Audit Cyber</span> <span class="badge">Diagnostic Réseau</span>
-        </div>
-    </div>
+<div class="section" id="stages" style="background: #f1f5f9;">
+    <h2>Mon Stage</h2>
+    <h3>Institut Fresnel (Marseille)</h3>
+    <p><strong>Rôle :</strong> Stagiaire Administrateur Réseaux</p>
+    <p>Réalisation d'audits de vulnérabilités à l'aide de l'outil <strong>OpenVAS</strong> (Greenbone). Analyse des failles et propositions de correctifs pour le parc informatique.</p>
+    <span class="badge">OpenVAS</span> <span class="badge">Sécurité Réseau</span> <span class="badge">Linux</span>
 </div>
 
 <div class="section" id="projets">
     <h2>Projets & Activités</h2>
-    <div class="grid" style="grid-template-columns: 1fr 1fr;">
-        <div style="background: #f8fafc; padding: 20px; border-radius: 8px;">
-            <h3>Cyber & Réseaux</h3>
-            <p>Configuration de protocoles IP et Ethernet. Développement de scripts en Python et C pour l'automatisation de tâches.</p>
-        </div>
-        <div style="background: #f8fafc; padding: 20px; border-radius: 8px;">
-            <h3>Électronique DIY</h3>
-            <p>Utilisation de cartes <strong>Arduino</strong> et protocoles <strong>I2C</strong> pour la gestion de capteurs intelligents.</p>
-        </div>
-    </div>
+    <ul>
+        <li><strong>Audit Cyber :</strong> Déploiement d'une solution de scan de vulnérabilités.</li>
+        <li><strong>Programmation :</strong> Création de scripts en Python et C.</li>
+        <li><strong>Électronique :</strong> Montage de systèmes avec cartes Arduino.</li>
+    </ul>
 </div>
 
-<div class="section" id="cv">
+<div class="section" id="cv" style="background: #f1f5f9;">
     <h2>CV & Expériences</h2>
-    
-    <div class="exp-item">
-        <span class="exp-date">2026</span>
-        <h3>Animateur Junior & Cie — SNCF</h3>
-        <p>Accompagnement sécurisé de groupes d'enfants en milieu ferroviaire. Gestion rigoureuse des flux et respect strict des procédures de sécurité.</p>
-    </div>
-
-    <div class="exp-item">
-        <span class="exp-date">2024 - 2026</span>
-        <h3>Animateur en centre aéré</h3>
-        <p>Encadrement d'enfants et organisation d'activités collectives. Développement du sens des responsabilités et du travail en équipe.</p>
-    </div>
-
-    <div style="text-align: center; margin-top: 40px;">
-        <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">📥 TÉLÉCHARGER MON CV COMPLET (PDF)</a>
-    </div>
+    <p>Accompagnateur Junior & Cie (SNCF) et Animateur en centre aéré.</p>
+    <a href="https://drive.google.com/file/d/1dSrH2Y89GgYj0-8Lof9GqFK6_Ecx6wWy/view?usp=sharing" class="btn" target="_blank">📥 Télécharger mon CV (PDF)</a>
 </div>
 
-<div class="section" id="contact" style="text-align: center;">
-    <h2>Contact & Réseaux</h2>
-    <p>📍 9 rue commandants mages, 13001 Marseille </p>
-    <p>📞 07 66 86 20 44 </p>
-    <p>📧 <a href="mailto:ismasaho2007@gmail.com" style="color: var(--accent-blue); font-weight: bold;">ismasaho2007@gmail.com</a> </p>
-    <br>
-    <a href="https://github.com/ism-13" class="btn">GitHub</a>
-    <a href="#" class="btn" style="background: #0077b5;">LinkedIn</a>
+<div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>📍 Marseille, France</p>
+    <p>📧 ismasaho2007@gmail.com</p>
+    <a href="https://github.com/ism-13" class="btn">Mon GitHub</a>
 </div>
 
 <footer>
-    <p>&copy; 2026 Ismaël Saho - Portfolio réalisé pour validation de stage</p>
+    <p>&copy; 2026 Ismaël Saho</p>
 </footer>
 
 </body>
