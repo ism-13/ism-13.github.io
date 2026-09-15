@@ -23,4 +23,4 @@ Le portfolio est consultable en ligne ici : **[https://ism-13.github.io](https:/
 En dehors de la cybersécurité, je suis passionné par la **moto**, ce qui m'apporte rigueur et vigilance, ainsi que par l'histoire et les nouvelles technologies.
 
 ---
-*Dernière mise à jour : Mars 2026*
+*Dernière mise à jour : Septembre 2026*
