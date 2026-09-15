@@ -1,63 +1,591 @@
-<!-- HEADER -->
-<header class="header">
-  <h1>Ismaël Saho</h1>
-  <p class="subtitle">Étudiant en BTS CIEL — Recherche de stage</p>
-  <p class="location">Lycée Vauvenargues (Aix-en-Provence) · Titulaire du CS Cybersécurité</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismaël Saho | Portfolio Cybersécurité & Réseaux</title>
+    <style>
+        :root { 
+            --deep-blue: #0f172a; 
+            --soft-blue: #1e293b;
+            --electric-blue: #3b82f6; 
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        body { 
+            font-family: 'Inter', Helvetica, sans-serif; 
+            margin: 0; 
+            background: var(--white); 
+            color: var(--soft-blue); 
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation fixe */
+        nav { 
+            background: var(--deep-blue); 
+            padding: 20px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        nav a { 
+            color: var(--white); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-weight: 600; 
+            font-size: 0.85em; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        nav a:hover { opacity: 1; color: var(--electric-blue); }
+
+        /* Header */
+        header { 
+            padding: 120px 20px; 
+            text-align: center;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1e293b 100%);
+            color: var(--white);
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 3em; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+        }
+        header p { 
+            color: var(--electric-blue); 
+            font-size: 1.1em; 
+            margin-top: 15px; 
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        header .tagline {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9em;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* Sections */
+        section { padding: 80px 20px; }
+        section:nth-child(even) { background: var(--light-gray); }
+        section:nth-child(odd) { background: var(--white); }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        h2 { 
+            color: var(--deep-blue); 
+            font-size: 1.5em;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--electric-blue);
+            margin: 15px auto 0;
+        }
+
+        .content-box {
+            background: var(--white);
+            padding: 35px;
+            border-left: 5px solid var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .content-box h3 {
+            margin: 0 0 5px 0;
+            color: var(--deep-blue);
+            font-size: 1.1em;
+        }
+
+        .content-box .role {
+            color: var(--electric-blue);
+            font-weight: bold;
+            margin: 5px 0 12px 0;
+            font-size: 0.9em;
+        }
+
+        .content-box p { margin: 8px 0; font-size: 0.95em; }
+
+        /* Grid deux colonnes */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        @media(max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+
+        /* Missions list */
+        .mission-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+        }
+        .mission-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.92em;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .mission-list li:last-child { border-bottom: none; }
+        .mission-list li::before {
+            content: '→';
+            color: var(--electric-blue);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Vulnérabilités table */
+        .vuln-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88em;
+            margin-top: 15px;
+        }
+        .vuln-table th {
+            background: var(--deep-blue);
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 0.5px;
+        }
+        .vuln-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        .vuln-table tr:nth-child(even) td { background: #f8fafc; }
+        .score-crit { color: #dc2626; font-weight: 700; }
+        .score-high { color: #ea580c; font-weight: 700; }
+
+        /* Tags compétences */
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .tag {
+            background: var(--deep-blue);
+            color: white;
+            padding: 8px 18px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Compétences deux catégories */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        @media(max-width: 680px) { .skills-grid { grid-template-columns: 1fr; } }
+
+        .skill-category h4 {
+            color: var(--deep-blue);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--electric-blue);
+        }
+        .skill-item {
+            padding: 7px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.92em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-item:last-child { border-bottom: none; }
+        .skill-item::before {
+            content: '▸';
+            color: var(--electric-blue);
+            font-size: 0.8em;
+        }
+
+        /* Encadré info */
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid var(--electric-blue);
+            padding: 18px 22px;
+            margin: 20px 0;
+            font-size: 0.92em;
+        }
+        .info-box strong { color: var(--deep-blue); }
+
+        /* Btn */
+        .btn { 
+            display: inline-block; 
+            padding: 16px 40px; 
+            background: var(--electric-blue);
+            color: white !important; 
+            text-decoration: none; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+            border-radius: 4px;
+        }
+        .btn:hover { background: var(--deep-blue); transform: translateY(-3px); }
+        .btn-dark { background: var(--deep-blue); }
+        .btn-dark:hover { background: var(--electric-blue); }
+
+        /* Timeline parcours */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--electric-blue);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--electric-blue);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--electric-blue);
+        }
+        .timeline-item .date {
+            font-size: 0.78em;
+            color: var(--electric-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .timeline-item h4 { margin: 4px 0; color: var(--deep-blue); font-size: 1em; }
+        .timeline-item p { margin: 4px 0; font-size: 0.9em; color: #64748b; }
+
+        footer { 
+            text-align: center; 
+            padding: 50px; 
+            background: var(--deep-blue); 
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8em; 
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#propos">Profil</a>
+    <a href="#stage">Stage</a>
+    <a href="#competences">Compétences</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header>
+    <h1>Ismaël Saho</h1>
+    <p>Étudiant en BTS CIEL — Recherche de stage</p>
+    <div class="tagline">Lycée Vauvenargues · Aix-en-Provence · Titulaire du CS Cybersécurité</div>
 </header>
 
-<!-- À PROPOS -->
-<section id="propos" class="section">
-  <h2>À propos</h2>
-  <p>
-    Actuellement étudiant en <strong>BTS CIEL</strong> (Cybersécurité, Informatique et réseaux, Électronique) au Lycée Vauvenargues d'Aix-en-Provence, je suis à la recherche d'un <strong>stage en entreprise</strong> pour valider ma première année.
-  </p>
-  <p>
-    Fort d'un <strong>CS Cybersécurité</strong> obtenu à l'École Libre des Métiers et d'une première expérience pratique en laboratoire de recherche, j'ai développé des compétences concrètes en audit de vulnérabilités, sécurisation d'équipements réseau et administration système.
-  </p>
-  <div class="objective-box">
-    <strong>Objectif :</strong> Obtenir un stage pratique (6 à 8 semaines) au sein d'une équipe informatique ou cybersécurité.
-  </div>
-</section>
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PROFIL                                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="propos">
+    <div class="container">
+        <h2>Profil Professionnel</h2>
+        <div class="content-box">
+            <p>Titulaire du <strong>Certificat de Spécialisation en Cybersécurité</strong> obtenu à l'École Libre des Métiers, je poursuis actuellement mes études en <strong>BTS CIEL</strong> (Cybersécurité, Informatique et réseaux, Électronique) au lycée Vauvenargues à Aix-en-Provence. Mon parcours est orienté vers l'administration sécurisée des infrastructures réseau et l'analyse de vulnérabilités.</p>
+            <p>Mon stage à l'<strong>Institut Fresnel</strong> m'a permis de mettre en pratique ces compétences dans un environnement professionnel réel : audit de vulnérabilités, remédiation d'équipements réseau, durcissement de serveurs et mise à niveau de postes Windows.</p>
+            <p>En parallèle, je travaille comme <strong>animateur chez Junior & Compagnie (SNCF)</strong> grâce à mon BAFA complet, ce qui m'a apporté rigueur, sens des responsabilités et gestion de groupe.</p>
+        </div>
 
-<!-- STAGE PRECEDENT -->
-<section id="stage" class="section">
-  <h2>Expérience pratique</h2>
-  <div class="card">
-    <h3>Stagiaire Systèmes, Réseaux & Cybersécurité</h3>
-    <p class="company">Institut Fresnel (CNRS / AMU) — Marseille</p>
-    <ul class="tasks-list">
-      <li><strong>Audit de vulnérabilités :</strong> Scans et analyse du parc réseau avec Greenbone / OpenVAS.</li>
-      <li><strong>Sécurisation réseau :</strong> Configuration, durcissement et mise à jour de switches HP/HPE (SSL/TLS, SNMP, SSH).</li>
-      <li><strong>Maintenance & Systèmes :</strong> Migration de postes de travail et gestion de parc Windows / Linux.</li>
-    </ul>
-    <div class="tags">
-      <span class="tag">OpenVAS</span>
-      <span class="tag">Debian</span>
-      <span class="tag">Switches HP</span>
-      <span class="tag">Windows 11</span>
-      <span class="tag">MobaXterm</span>
+        <div class="info-box">
+            <strong>Objectif :</strong> Obtenir un <strong>stage en entreprise (6 à 8 semaines)</strong> dans le cadre de mon BTS CIEL, afin de renforcer mes compétences sur le terrain au sein d'une équipe informatique ou cybersécurité.
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- PARCOURS -->
-<section id="parcours" class="section">
-  <h2>Parcours & Formation</h2>
-  <ul class="timeline">
-    <li>
-      <span class="date">2026 – Présent</span>
-      <strong>BTS CIEL</strong> (Cybersécurité, Informatique & Réseaux, Électronique)
-      <p>Lycée Vauvenargues — Aix-en-Provence</p>
-    </li>
-    <li>
-      <span class="date">2025 – 2026</span>
-      <strong>CS Cybersécurité (Obtenu)</strong>
-      <p>École Libre des Métiers — Marseille</p>
-    </li>
-    <li>
-      <span class="date">2023 – 2024</span>
-      <strong>Baccalauréat STI2D</strong>
-      <p>Lycée du Rempart — Marseille</p>
-    </li>
-  </ul>
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- STAGE                                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="stage">
+    <div class="container">
+        <h2>Mon Stage</h2>
+
+        <!-- Fiche identité -->
+        <div class="two-col">
+            <div class="content-box" style="margin-bottom:0;">
+                <h3>Fiche d'identité</h3>
+                <ul class="mission-list" style="margin-top:12px;">
+                    <li><strong>Entreprise :</strong>&nbsp;Institut Fresnel</li>
+                    <li><strong>Secteur :</strong>&nbsp;Laboratoire de recherche (Optique / Photonique)</li>
+                    <li><strong>Localisation :</strong>&nbsp;Marseille — Site Saint-Jérôme</li>
+                    <li><strong>Période :</strong>&nbsp;Du 16/02/2026 au 24/04/2026</li>
+                    <li><strong>Encadrant :</strong>&nbsp;Frédéric — Service IT/Réseau</li>
+                </ul>
+            </div>
+            <div class="content-box" style="margin-bottom:0;">
+                <h3>Missions principales</h3>
+                <ul class="mission-list" style="margin-top:12px;">
+                    <li>Audit de vulnérabilités réseau (Greenbone/OpenVAS)</li>
+                    <li>Remédiation des commutateurs HPE/HP</li>
+                    <li>Durcissement des serveurs (IPMI, Debian EOL)</li>
+                    <li>Mise à niveau des postes Windows (W7→W10→W11)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Audit Greenbone -->
+        <div class="content-box" style="margin-top:25px;">
+            <h3>Audit de vulnérabilités réseau — Greenbone / OpenVAS</h3>
+            <p class="role">Outil : Greenbone Security Assistant v25.3.1 · Réseau scanné : 10.48.31.0/24</p>
+            <p>Scan complet du réseau de l'Institut avec l'outil Greenbone. Plus de 1 000 résultats analysés, filtrés par score CVSS pour identifier les priorités. Chaque vulnérabilité est notée de 0 à 10 : plus le score est élevé, plus la faille est critique.</p>
+
+            <table class="vuln-table">
+                <tr>
+                    <th>Score</th>
+                    <th>Vulnérabilité</th>
+                    <th>Machine(s) concernée(s)</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><span class="score-crit">10.0</span></td>
+                    <td>OS End of Life — Debian 7 (sans support depuis 2018)</td>
+                    <td>10.48.31.16 / .34</td>
+                    <td>Migration vers Debian 12</td>
+                </tr>
+                <tr>
+                    <td><span class="score-high">8.8</span></td>
+                    <td>AXIS OS RCE Vulnerability (caméra réseau)</td>
+                    <td>10.48.31.33</td>
+                    <td>Mise à jour firmware</td>
+                </tr>
+                <tr>
+                    <td><span class="score-high">7.6</span></td>
+                    <td>Communautés SNMP par défaut ("public/private")</td>
+                    <td>7 équipements</td>
+                    <td>Modification des mots de passe SNMP</td>
+                </tr>
+                <tr>
+                    <td><span class="score-high">7.5</span></td>
+                    <td>SSL/TLS — Suites cryptographiques faibles + certificats expirés</td>
+                    <td>10.48.31.62 / .66 / .200</td>
+                    <td>Désactivation des algos faibles</td>
+                </tr>
+                <tr>
+                    <td><span class="score-high">7.4</span></td>
+                    <td>OpenSSL CCS Vulnerability</td>
+                    <td>10.48.31.35</td>
+                    <td>Mise à jour OpenSSL</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Remédiation switches -->
+        <div class="content-box">
+            <h3>Remédiation des commutateurs réseau (Switches)</h3>
+            <p class="role">Équipements : HP 2920-48G · HPE Comware · HP ProCurve 2610</p>
+            <ul class="mission-list">
+                <li><strong>HP 2920-48G :</strong> Algorithmes SSH KEX faibles — non remédiable (limite firmware), documenté dans le rapport d'audit.</li>
+                <li><strong>HPE Comware :</strong> Vulnérabilité SWEET32 (chiffrement DES/3DES) — remédiation via interface web d'administration.</li>
+                <li><strong>HP ProCurve 2610 :</strong> Communautés SNMP par défaut corrigées via Firefox ESR 52.8.0 + plugin Java (interface d'administration legacy).</li>
+            </ul>
+        </div>
+
+        <!-- Windows -->
+        <div class="content-box">
+            <h3>Mise à niveau des postes de travail Windows</h3>
+            <p class="role">Dell Precision Tower 5810 · Dell Precision T3610</p>
+
+            <p><strong>Dell Precision Tower 5810 — Windows 10 v1909 → Windows 11</strong></p>
+            <ul class="mission-list">
+                <li>Résolution de l'erreur Windows Update <code>0x80070020</code> et des crashs d'explorer.exe.</li>
+                <li>Passage vers Windows 10 22H2 via l'outil officiel Microsoft.</li>
+                <li>Incompatibilités W11 contournées via <strong>FlyOOBE/Flyby11</strong> (bypass TPM 2.0, CPU non supporté, Secure Boot).</li>
+                <li>Désinstallation des pilotes Dell incompatibles après la mise à niveau. <strong>✔ Succès.</strong></li>
+            </ul>
+
+            <p style="margin-top:15px;"><strong>Dell Precision T3610 — Windows 7 Pro → Windows 10</strong></p>
+            <ul class="mission-list">
+                <li>RAID1 dégradé identifié (disque ST2000DM001 défaillant) via console Intel RST.</li>
+                <li>BSOD <code>DRIVER_PNP_WATCHDOG</code> lors de l'installation W10 — causé par le disque défaillant.</li>
+                <li>Clé USB bootable créée avec <strong>Rufus 4.13</strong> en mode MBR/BIOS Legacy.</li>
+                <li>Installation en attente — remplacement du disque défaillant requis. Signalé au maître de stage.</li>
+            </ul>
+        </div>
+
+    </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- COMPÉTENCES                                                -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="competences">
+    <div class="container">
+        <h2>Domaines de Compétences</h2>
+
+        <div class="skills-grid">
+            <div class="content-box skill-category">
+                <h4>Compétences techniques</h4>
+                <div class="skill-item">Audit réseau — Greenbone / OpenVAS</div>
+                <div class="skill-item">Analyse CVSS — priorisation des risques</div>
+                <div class="skill-item">Administration Linux (Debian, Proxmox)</div>
+                <div class="skill-item">Administration Windows — diagnostic, upgrade</div>
+                <div class="skill-item">Protocoles réseau — SSH, SNMP, SSL/TLS</div>
+                <div class="skill-item">Switches HPE/HP — configuration, remédiation</div>
+                <div class="skill-item">IPMI / iDRAC — durcissement serveurs</div>
+                <div class="skill-item">Rufus, FlyOOBE, MobaXterm</div>
+                <div class="skill-item">Python, C — bases</div>
+                <div class="skill-item">Électronique — Arduino / I2C</div>
+            </div>
+
+            <div class="content-box skill-category">
+                <h4>Compétences comportementales</h4>
+                <div class="skill-item">Autonomie — résolution de problèmes en production</div>
+                <div class="skill-item">Rigueur — documentation structurée</div>
+                <div class="skill-item">Adaptabilité — environnements hétérogènes</div>
+                <div class="skill-item">Communication — reporting au maître de stage</div>
+                <div class="skill-item">Responsabilité — encadrement (BAFA, SNCF)</div>
+                <div class="skill-item">Gestion des priorités — tri par criticité</div>
+                <div class="skill-item">Travail en environnement professionnel réel</div>
+                <div class="skill-item">Lucidité sur ses axes de progression</div>
+            </div>
+        </div>
+
+        <div class="tech-tags">
+            <div class="tag">Greenbone / OpenVAS</div>
+            <div class="tag">Linux / Windows</div>
+            <div class="tag">Réseau IP/Ethernet</div>
+            <div class="tag">SSH · SNMP · SSL</div>
+            <div class="tag">Python · C</div>
+            <div class="tag">BAFA</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PARCOURS                                                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="parcours">
+    <div class="container">
+        <h2>Parcours & Expériences</h2>
+
+        <div class="two-col">
+            <div>
+                <div class="content-box" style="margin-bottom:25px;">
+                    <h3>Formation</h3>
+                    <div class="timeline" style="margin-top:15px;">
+                        <div class="timeline-item">
+                            <div class="date">2026 – En cours</div>
+                            <h4>BTS CIEL</h4>
+                            <p>Lycée Vauvenargues, Aix-en-Provence<br>Cybersécurité, Informatique et réseaux, Électronique</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date">2025 – 2026</div>
+                            <h4>CS Cybersécurité (Obtenu)</h4>
+                            <p>École Libre des Métiers, Marseille<br>Certificat de Spécialisation — Formation initiale</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date">2024</div>
+                            <h4>BUT GEII (partiel)</h4>
+                            <p>Prise de conscience sur la nécessité d'un cadre professionnel structurant</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date">2024</div>
+                            <h4>Baccalauréat STI2D SIN</h4>
+                            <p>Lycée du Rempart, Marseille<br>Option Système d'Information et Numérique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="content-box" style="margin-bottom:25px;">
+                    <h3>Expériences professionnelles</h3>
+                    <div class="timeline" style="margin-top:15px;">
+                        <div class="timeline-item">
+                            <div class="date">2026</div>
+                            <h4>Stagiaire Sécurité Réseau</h4>
+                            <p>Institut Fresnel, Marseille<br>Audit Greenbone, remédiation switches, mise à niveau Windows</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="date">2025 – présent</div>
+                            <h4>Animateur — Junior & Compagnie</h4>
+                            <p>SNCF · Titulaire du BAFA complet<br>Encadrement d'enfants, responsabilité, gestion de groupe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Note personnelle :</strong> Le stage à l'Institut Fresnel et mon travail à la SNCF m'ont démontré l'importance de la rigueur dans un cadre professionnel. Titulaire d'un CS Cybersécurité, je consolide mes acquis au sein du <strong>BTS CIEL au lycée Vauvenargues</strong> tout en recherchant activement un stage pratique en entreprise.
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- CV                                                          -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="cv">
+    <div class="container" style="text-align:center;">
+        <h2>Curriculum Vitae</h2>
+        <p>Téléchargez mon dossier de compétences complet au format numérique (PDF).</p>
+        <a href="https://drive.google.com/file/d/12KTZ21Rk6dsEHkTQNvjrQunS-uOEKTja/view?usp=sharing" class="btn">Consulter le CV (PDF)</a>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- CONTACT                                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="contact">
+    <div class="container" style="text-align:center;">
+        <h2>Contact</h2>
+        <p style="font-size:1.1em; color:var(--soft-blue);">
+            Marseille, France<br>
+            ismasaho2007@gmail.com<br>
+            07 66 86 20 44
+        </p>
+        <div style="margin-top:30px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+            <a href="https://github.com/ism-13" class="btn btn-dark" target="_blank">GitHub</a>
+            <a href="mailto:ismasaho2007@gmail.com" class="btn">Envoyer un email</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Ismaël Saho — Portfolio Numérique — Cybersécurité & Réseaux
+</footer>
+
+</body>
+</html>
